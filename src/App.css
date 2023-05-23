@@ -1,0 +1,10 @@
+body {
+  background-color: rgba(202, 234, 230, 1);
+
+}
+.card{
+  display: flex;
+  flex-direction: row;
+  width: 30%;
+  flex-wrap: wrap;
+}
