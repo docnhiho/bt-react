@@ -1,7 +1,16 @@
 import styled from 'styled-components';
+import img1 from 'assets/img1.svg';
+import img2 from 'assets/img2.svg';
+import img3 from 'assets/img3.svg';
+import img4 from 'assets/img4.svg';
+import img5 from 'assets/img5.svg';
+import img6 from 'assets/img6.svg';
+
+
+
 
 const StyleCreator = styled.div`
-height: 478px;
+height: 526px;
 width: 327px;
 border: none;
 border-radius: 16px;
@@ -27,21 +36,60 @@ font-family: 'DM Sans', sans-serif;
 }
 `;
 
-const Creator = ({ count, image, name, button }) => {
+const TableStyle = styled.div`
+    font-family: 'DM Sans', sans-serif;
+    padding: 5px;
+    button{
+        width: 77px;
+        height: 32px;
+        border-radius: 20px;
+        background-color: rgba(84, 41, 255, 0.1);
+        border: none;
+        font-size: 12px;
+        line-height: 16px;
+        color: rgba(84, 41, 255, 1);
+        margin-left: 10px;
+    }
+    table{
+        width: 100%;
+    }
+    .name{
+        font-size: 16px;
+        line-height: 21px;
+        font-weight: bold;
+        margin-top: 9px;
+    }
+    .nickname{
+        font-size: 12px;
+        line-height: 16px;
+        color: rgba(116, 116, 117, 1);
+        margin-top: -14px;
+    }
+    
+`;
+
+const Creator = ({ count, image, name, nickname }) => {
     return (
-        <table>
-            <tr>
-                <td>
-                    {count}
-                </td>
-                <td>
-                    {image}
-                </td>
-                <td>
-                    {name}
-                </td>
-            </tr>
-        </table>
+        <TableStyle>
+            <table>
+                <tr>
+                    <td>
+                        {count}.
+                    </td>
+                    <td>
+                        <img src={image} alt="avt" />
+                    </td>
+                    <td>
+                        <p className='name'>{name}</p>
+                        <p className='nickname'>{nickname}</p>
+                    </td>
+                    <td>
+                        <button>Folow</button>
+                    </td>
+                </tr>
+            </table>
+        </TableStyle>
+
     )
 }
 
@@ -51,13 +99,46 @@ export const TopCreator = () => {
             <div className='top'>
                 <p className='tc'>Top Creator</p>
                 <p className='sa'>See all</p>
+
             </div>
-            <Creator count={"1"}>
-
+            <Creator
+                count={"1"}
+                image={img1}
+                name={"Michael Jordan"}
+                nickname={"@jordan_"}>
             </Creator>
-            <Creator count={"2"}>
-
+            <Creator
+                count={"2"}
+                image={img2}
+                name={"John Tibao"}
+                nickname={"@johnti60"}>
             </Creator>
+            <Creator
+                count={"3"}
+                image={img3}
+                name={"Teressa"}
+                nickname={"@teressa"}>
+            </Creator>
+            <Creator
+                count={"4"}
+                image={img4}
+                name={"Johan Hawn"}
+                nickname={"Johan Hawn"}>
+            </Creator>
+            <Creator
+                count={"5"}
+                image={img5}
+                name={"Maria Alisson"}
+                nickname={"@m_alisson"}>
+            </Creator>
+            <Creator
+                count={"6"}
+                image={img6}
+                name={"Sam Erricson"}
+                nickname={"@erricsonsam"}>
+            </Creator>
+           
+
         </StyleCreator>
     )
 }

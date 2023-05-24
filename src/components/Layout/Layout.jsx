@@ -3,7 +3,7 @@ import styled from "styled-components";
 import SideBar from "components/Sidebar/SideBar";
 
 const LayoutStyled = styled.div`
-  background-color: #1c233d;
+  background-color:  rgba(202, 234, 230, 1);
   min-height: 100vh;
   .right {
     float: right;
@@ -22,9 +22,9 @@ const PrimaryLayout = ({ children }) => {
     <LayoutStyled>
       
         <SideBar></SideBar>
-      
+        <Header ></Header>
+
       <div className="right">
-        <Header />
         <ContentStyled>{children}</ContentStyled>
       </div>
     </LayoutStyled>
