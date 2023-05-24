@@ -57,6 +57,7 @@ const Header = () => {
       <RightStyle>
         <div className="noti">
           <img src={noti}></img>
+          <p>abb</p>
         </div>
         <span>avatar</span>
       </RightStyle>
