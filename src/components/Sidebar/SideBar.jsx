@@ -10,6 +10,8 @@ import Menu7 from 'assets/Menu7.svg';
 import Menu8 from 'assets/Menu8.svg';
 import Menu9 from 'assets/Menu9.svg';
 import ETH from 'assets/ETH.svg';
+import plus from 'assets/Plus.svg';
+import RightArrow from 'assets/RightArrow.svg';
 
 
 
@@ -70,8 +72,8 @@ const CardStyle = styled.div`
         margin-top: -2px;
         margin-bottom: 9px;
     }
-    span{
-        color: rgba(224, 222, 229, 1);
+    .ETH{
+        color: rgba(255, 255, 255, 1);
         font-size: 12px;
         line-height: 16px;
         margin-left: -17px;
@@ -79,10 +81,23 @@ const CardStyle = styled.div`
 `;
 
 const StyleBtn = styled.button`
+    font-family: 'DM Sans', sans-serif;
+    margin-left: 18px;
+    margin-top: 10px;
     width: 196px;
     height: 49px;
-    border: 1px solid black;
+    border: none;
     border-radius: 12px;
+    color: rgba(39, 38, 46, 1) ; 
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 1)
+;
+
 `;
 
 const SideBar = () => {
@@ -137,8 +152,13 @@ const SideBar = () => {
             <CardStyle>
                 <p className="YB">Your Balance</p>
                 <p className="amount">1,034.02</p>
-                <img src={ETH}></img> <span>ETH</span>
-                <StyleBtn></StyleBtn>
+                <img src={ETH}></img> 
+                <span className="ETH">ETH</span>
+                <StyleBtn>
+                    <img src={plus}></img>
+                    <span>Top Up Balance</span>
+                    <img src={RightArrow}></img>
+                </StyleBtn>
             </CardStyle>
         </SideBarStyled>
     )
