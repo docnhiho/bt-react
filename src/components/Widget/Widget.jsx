@@ -35,7 +35,7 @@ const Wig = styled.div`
     }
 `;
 
-export const Widget = ({ percent, text, price, unit, img }) => {
+export const Widget = ({  boderColor, percent, text, price, unit, img }) => {
     return (
         <Wig>
             <p className='text'>{text}</p>
@@ -45,7 +45,7 @@ export const Widget = ({ percent, text, price, unit, img }) => {
                 <span className='price-price'>{price}</span>
                 <span className='unit'>{unit}</span>
             </div>
-            <Button percent={percent}></Button>
+            <Button boderColor={boderColor} percent={percent}></Button>
         </Wig>
     )
 }
