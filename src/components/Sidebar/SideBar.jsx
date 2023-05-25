@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 import Logo from 'assets/Logo.svg';
 import Menu1 from 'assets/Menu1.svg';
 import Menu2 from 'assets/Menu2.svg';
@@ -34,7 +35,9 @@ const SideBarStyled = styled.div`
         font-size: 16px;
         line-height: 21px;
         color: rgba(116, 116, 117, 1);
+        display: flex;
     }
+  
 `;
 
 
@@ -47,6 +50,11 @@ const MenuStyled = styled.div`
         font-weight: bold;
         margin-bottom: 25px;
     }
+    .nav{
+        text-decoration: none;
+        color: rgb(116, 116, 117);
+    }
+
 `;
 
 const CardStyle = styled.div`
@@ -95,10 +103,58 @@ const StyleBtn = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(255, 255, 255, 1)
-;
+    background-color: rgba(255, 255, 255, 1);
+`;
+
+const StyleToggle = styled.div`
+    margin-left: 20px;
+    margin-top: 2px;
+    .checkbox {
+        opacity: 0;
+        position: absolute;
+        }
+    .checkbox-label {
+        background-color: #111;
+        width: 30px;
+        height: 7px;
+        border-radius: 50px;
+        position: relative;
+        padding: 5px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+}   
+    .checkbox-label .ball {
+        background-color: #fff;
+        width: 13px;
+        height: 13px;
+        position: absolute;
+        left: 2px;
+        top: 2px;
+        border-radius: 50%;
+        transition: transform 0.2s linear;
+}
+    .checkbox:checked + .checkbox-label .ball {
+        transform: translateX(23px);
+}
 
 `;
+
+
+const Toggle = () => {
+    return (
+        <StyleToggle>
+            <input type="checkbox" className="checkbox" id="checkbox"></input>
+            <label for="checkbox" className="checkbox-label">
+                <i className="fas fa-moon"></i>
+                <i className="fas fa-sun"></i>
+                <span className="ball"></span>
+            </label>
+        </StyleToggle>
+    )
+}
+
 
 const SideBar = () => {
     return (
@@ -106,39 +162,63 @@ const SideBar = () => {
             <img src={Logo}></img>
             <MenuStyled>
                 <div className="TopMenu">
-                    <img src={Menu1}></img>
-                    <a>Dashboard</a>
+                    <NavLink className="nav" to="/a">
+                        <img src={Menu1}></img>
+                        <a>Dashboard</a>
+                    </NavLink>
+
                 </div>
                 <div className="TopMenu">
-                    <img src={Menu2}></img>
-                    <a>Market</a>
+                    <NavLink className="nav">
+                        <img src={Menu2}></img>
+                        <a>Market</a>
+                    </NavLink>
+
                 </div>
                 <div className="TopMenu">
-                    <img src={Menu3}></img>
-                    <a>Active Bids</a>
+                    <NavLink className="nav">
+                        <img src={Menu3}></img>
+                        <a>Active Bids</a>
+                    </NavLink>
+
                 </div>
             </MenuStyled>
             <MenuStyled>
                 <h3>PROFILE</h3>
                 <div className="TopMenu">
-                    <img src={Menu4}></img>
-                    <a>My Portfolio</a>
+                    <NavLink className="nav">
+                        <img src={Menu4}></img>
+                        <a>My Portfolio</a>
+                    </NavLink>
+
                 </div>
                 <div className="TopMenu">
-                    <img src={Menu5}></img>
-                    <a>Wallet</a>
+                    <NavLink className="nav">
+                        <img src={Menu5}></img>
+                        <a>Wallet</a>
+                    </NavLink>
+
                 </div>
                 <div className="TopMenu">
-                    <img src={Menu6}></img>
-                    <a>Favorites</a>
+                    <NavLink className="nav">
+                        <img src={Menu6}></img>
+                        <a>Favorites</a>
+                    </NavLink>
+
                 </div>
                 <div className="TopMenu">
-                    <img src={Menu7}></img>
-                    <a>History</a>
+                    <NavLink className="nav">
+                        <img src={Menu7}></img>
+                        <a>History</a>
+                    </NavLink>
+
                 </div>
                 <div className="TopMenu">
-                    <img src={Menu8}></img>
-                    <a>Settings</a>
+                    <NavLink className="nav">
+                        <img src={Menu8}></img>
+                        <a>Settings</a>
+                    </NavLink>
+
                 </div>
             </MenuStyled>
             <MenuStyled>
@@ -146,13 +226,14 @@ const SideBar = () => {
                 <div className="TopMenu">
                     <img src={Menu9}></img>
                     <a>Settings</a>
-                    <input type="checkbox"></input>
+                    <Toggle></Toggle>
+                    
                 </div>
             </MenuStyled>
             <CardStyle>
                 <p className="YB">Your Balance</p>
                 <p className="amount">1,034.02</p>
-                <img src={ETH}></img> 
+                <img src={ETH}></img>
                 <span className="ETH">ETH</span>
                 <StyleBtn>
                     <img src={plus}></img>

@@ -1,32 +1,42 @@
 import Header from "components/Header";
 import styled from "styled-components";
+import Contents from "components/Contents/Contents";
+import NFT from "components/NFT/NFT";
 import SideBar from "components/Sidebar/SideBar";
 
 const LayoutStyled = styled.div`
   background-color:  rgba(202, 234, 230, 1);
   min-height: 100vh;
-  .right {
-    float: right;
-    min-width: 78%;
-  }
+
+`;
+const RightStyle = styled.div`
+    margin-right: 10px;
+    width: 78%;
+    .right{
+      display: flex;
+      padding-left: 36px;
+      padding-top: 40px;
+    }
 `;
 const ContentStyled = styled.div`
   background-color: rgba(202, 234, 230, 1);
-  margin-top: 64px;
   height: 100vh;
+  padding-left: 10px;
 `;
-
 
 const PrimaryLayout = ({ children }) => {
   return (
     <LayoutStyled>
-      
-        <SideBar></SideBar>
-        <Header ></Header>
+      <SideBar></SideBar>
+      <Header ></Header>
+      <RightStyle >
+        <div className="right">
+          <Contents>
+          </Contents>
+          <ContentStyled>{children}</ContentStyled>
+        </div>
 
-      <div className="right">
-        <ContentStyled>{children}</ContentStyled>
-      </div>
+      </RightStyle>
     </LayoutStyled>
   );
 };

@@ -36,9 +36,11 @@ font-family: 'DM Sans', sans-serif;
 }
 `;
 
-const TableStyle = styled.div`
+const TableStyle = styled.table`
     font-family: 'DM Sans', sans-serif;
     padding: 5px;
+    table-layout: auto;
+    width: 338px;  
     button{
         width: 77px;
         height: 32px;
@@ -65,13 +67,16 @@ const TableStyle = styled.div`
         color: rgba(116, 116, 117, 1);
         margin-top: -14px;
     }
+    .btnn{
+        text-align: right;
+    }
     
 `;
 
 const Creator = ({ count, image, name, nickname }) => {
     return (
         <TableStyle>
-            <table>
+            <>
                 <tr>
                     <td>
                         {count}.
@@ -83,15 +88,55 @@ const Creator = ({ count, image, name, nickname }) => {
                         <p className='name'>{name}</p>
                         <p className='nickname'>{nickname}</p>
                     </td>
-                    <td>
+                    <td className='btnn'>
                         <button>Folow</button>
                     </td>
                 </tr>
-            </table>
+            </>
         </TableStyle>
 
     )
 }
+
+const fakeData = [
+    {
+        count: "1",
+        image: img1 ,
+        name: "Michael Jordan",
+        nickname: "@jordan_",
+    },
+    {
+        count: "2",
+        image:  img2 ,
+        name: "John Tibao",
+        nickname: "@johnti60",
+    },
+    {
+        count: "3",
+        image: img3 ,
+        name: "Teressa",
+        nickname: "@teressa",
+    },
+    {
+        count: "4",
+        image: img4 ,
+        name: "Johan Hawn",
+        nickname: "@jordan_",
+    },
+    {
+        count: "5",
+        image: img5 ,
+        name: "Maria Alisson",
+        nickname: "@m_alisson",
+    },
+    {
+        count: "6",
+        image: img6 ,
+        name: "Sam Erricson",
+        nickname: "@erricsonsam",
+    },
+
+]
 
 export const TopCreator = () => {
     return (
@@ -101,7 +146,11 @@ export const TopCreator = () => {
                 <p className='sa'>See all</p>
 
             </div>
-            <Creator
+            {
+                fakeData.map((item) => <Creator count={item.count} image={item.image} name={item.name} nickname={item.nickname}></Creator>)
+
+            }
+            {/* <Creator
                 count={"1"}
                 image={img1}
                 name={"Michael Jordan"}
@@ -136,8 +185,8 @@ export const TopCreator = () => {
                 image={img6}
                 name={"Sam Erricson"}
                 nickname={"@erricsonsam"}>
-            </Creator>
-           
+            </Creator> */}
+
 
         </StyleCreator>
     )

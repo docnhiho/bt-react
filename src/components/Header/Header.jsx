@@ -7,7 +7,7 @@ import noti from 'assets/noti.svg';
 const HeaderStyled = styled.div`
   /* position: fixed;
   z-index: 99; */
-  max-width: 100%;
+  width: 65%;
   height: 56px;
   display: flex;
   justify-content: space-between ;
@@ -38,8 +38,8 @@ const InputStyle = styled.div`
   }
   .sreach{
     position: absolute;
-    top: 37px;
-    left: 317px;
+    top: 36px;
+    left: 411px;
     transform: translate(50%, 50%);
   }
 `;

@@ -9,7 +9,8 @@ const Wig = styled.div`
     background-color: rgba(255, 255, 255, 1);
     border-radius: 10px;
     padding: 0px 21px 0px 21px;
-    margin: 22px;
+    margin-right: 20px;
+    margin-bottom: 20px;
     .text{
         font-family: 'DM Sans', sans-serif;
         font-size: 14px;
@@ -34,6 +35,7 @@ const Wig = styled.div`
         margin-top: 20px;
     }
 `;
+
 
 export const Widget = ({  boderColor, percent, text, price, unit, img }) => {
     return (
