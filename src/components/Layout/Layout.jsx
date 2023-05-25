@@ -1,13 +1,14 @@
 import Header from "components/Header";
 import styled from "styled-components";
 import Contents from "components/Contents/Contents";
-import NFT from "components/NFT/NFT";
 import SideBar from "components/Sidebar/SideBar";
 
-const LayoutStyled = styled.div`
-  background-color:  rgba(202, 234, 230, 1);
-  min-height: 100vh;
 
+
+const LayoutStyled = styled.div`
+    background-color: rgba(202, 234, 230, 1);
+  width: 1482px;
+  margin: 0 auto;
 `;
 const RightStyle = styled.div`
     margin-right: 10px;

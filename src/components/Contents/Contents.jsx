@@ -10,8 +10,8 @@ img{
 }
 .text{
   position: absolute;
-  top: 13%;
-  left: 12%;
+  top: 16%;
+  left: 19%;
   transform: translate(50%, 50%) ;
   width: 536px;
   height: 130px;

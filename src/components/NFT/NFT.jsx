@@ -92,27 +92,74 @@ const NftContents = styled.div`
     }
 `;
 
+const fakeData = [
+    {
+        img: nft1,
+        nameNFT: "Ape In Love",
+        like: "21,5K Likes",
+        ava: img1,
+        nickname: "@jordan_",
+        logo: logoNFT,
+        name: "Current Bid",
+        price: "6.12 ETH"
+    },
+    {
+        img: nft1,
+        nameNFT: "Ape In Love",
+        like: "21,5K Likes",
+        ava: img1,
+        nickname: "@jordan_",
+        logo: logoNFT,
+        name: "Current Bid",
+        price: "6.12 ETH"
+    },
+    {
+        img: nft1,
+        nameNFT: "Ape In Love",
+        like: "21,5K Likes",
+        ava: img1,
+        nickname: "@jordan_",
+        logo: logoNFT,
+        name: "Current Bid",
+        price: "6.12 ETH"
+    },
+    {
+        img: nft1,
+        nameNFT: "Ape In Love",
+        like: "21,5K Likes",
+        ava: img1,
+        nickname: "@jordan_",
+        logo: logoNFT,
+        name: "Current Bid",
+        price: "6.12 ETH"
+    },
+
+]
+
 const NFTT = ({ img, nameNFT, like, ava, nickname, logo, name, price }) => {
     return (
-        <div className="contain">
-            <img src={img} alt="img"></img>
-            <div className="header">
-                <p className="name">{nameNFT}</p>
-                <p className="like">{like}</p>
-            </div>
-            <div className="avatar">
-                <img src={ava} alt="ava"></img>
-                <span>{nickname}</span>
-            </div>
-            <div className="price">
-                <p>{name}</p>
-                <div>
-                    <img src={logo}></img>
-                    <span>{price}</span>
+        <NftContents>
+            <div className="contain">
+                <img src={img} alt="img"></img>
+                <div className="header">
+                    <p className="name">{nameNFT}</p>
+                    <p className="like">{like}</p>
                 </div>
+                <div className="avatar">
+                    <img src={ava} alt="ava"></img>
+                    <span>{nickname}</span>
+                </div>
+                <div className="price">
+                    <p>{name}</p>
+                    <div>
+                        <img src={logo}></img>
+                        <span>{price}</span>
+                    </div>
+                </div>
+
             </div>
-            
-        </div>
+        </NftContents>
+
 
     )
 }
@@ -130,15 +177,11 @@ const NFT = () => {
                 </div>
             </div>
             <div className="Nftcon">
-                <NftContents>
-                    <NFTT img={nft1} nameNFT={"Ape In Love"} like={"21,5K Likes"} ava={img1} nickname={"@johnti60"} name={"Current Bid"} logo={logoNFT} price={"6.12 ETH"}></NFTT>
-                </NftContents>
-                <NftContents>
-
-                </NftContents>
-                <NftContents>
-
-                </NftContents>
+                {/* <NFTT img={nft1} nameNFT={"Ape In Love"} like={"21,5K Likes"} ava={img1} nickname={"@johnti60"} name={"Current Bid"} logo={logoNFT} price={"6.12 ETH"}></NFTT> */}
+                {
+                    fakeData.map((item) => <NFTT img={item.img} nameNFT={item.nameNFT} like={item.like} ava={item.ava}
+                    nickname={item.nickname} name={item.name} logo={item.logo} price={item.price}></NFTT>)
+                }
             </div>
         </NftStyle>
     )

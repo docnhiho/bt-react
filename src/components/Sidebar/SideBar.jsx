@@ -23,7 +23,7 @@ const SideBarStyled = styled.div`
   background-color: white;
   float: left;
   min-width: 19%;
-  height: 100vh;
+  height: auto;
   padding-left: 42px;
   padding-top: 40px;
   img{
@@ -63,6 +63,7 @@ const CardStyle = styled.div`
     background-image: linear-gradient(to top left, rgba(84, 41, 255, 1)
  , rgba(187, 170, 255, 1));
     color: white;
+    margin-bottom: 40px;
     text-align: center;
     padding-top: 20px;
     border-radius: 20px;
