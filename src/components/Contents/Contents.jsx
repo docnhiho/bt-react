@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import Banner from 'assets/banner.svg';
 import NFT from "components/NFT/NFT";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; 
+import { Carousel } from 'react-responsive-carousel';
 
 
 
@@ -10,7 +12,7 @@ img{
 }
 .text{
   position: absolute;
-  top: 16%;
+  top: 11%;
   left: 19%;
   transform: translate(50%, 50%) ;
   width: 536px;

@@ -31,10 +31,10 @@ const Home = () => {
       <div className="App">
 
         <div className='card'>
-          {
+          {/* {
             fakeData.map((item) => <Widget text={item.text} price={item.price} percent={item.percent}></Widget>)
-          }
-          {/* <Widget
+          } */}
+          <Widget
             percent={12.3}
             text={"Revenue"}
             price={"5.00"}
@@ -58,7 +58,7 @@ const Home = () => {
             text={"Revenue"}
             price={"5.00"}
             unit={"ETH"} >
-          </Widget> */}
+          </Widget>
 
         </div>
         <div>

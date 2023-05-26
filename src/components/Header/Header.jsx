@@ -1,17 +1,19 @@
 import styled from "styled-components";
 import sreach from 'assets/sreach.svg';
 import noti from 'assets/noti.svg';
+import img1 from 'assets/img1.svg';
+
 
 
 
 const HeaderStyled = styled.div`
   /* position: fixed;
   z-index: 99; */
-  width: 65%;
+  width: 72%;
   height: 56px;
   display: flex;
   justify-content: space-between ;
-  background-color: rgba(202, 234, 230, 1);
+  /* background-color: rgba(202, 234, 230, 1); */
   padding-top: 32px;
   padding-left: 32px;
   font-family: 'DM Sans', sans-serif;
@@ -38,13 +40,21 @@ const InputStyle = styled.div`
   }
   .sreach{
     position: absolute;
-    top: 36px;
-    left: 411px;
-    transform: translate(50%, 50%);
+    top: 5%;
+    left: 30%;
+    transform: translate(78%, 57%);
+
   }
 `;
 const RightStyle = styled.div`
   display: flex;
+  position: relative;
+  .noti img{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    transform: translate(50%, 50%);
+  }
 `;
 
 const Header = () => {
@@ -57,9 +67,8 @@ const Header = () => {
       <RightStyle>
         <div className="noti">
           <img src={noti}></img>
-          <p>abb</p>
         </div>
-        <span>avatar</span>
+        <img src={img1}></img>
       </RightStyle>
     </HeaderStyled>
   );

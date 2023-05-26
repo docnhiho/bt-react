@@ -12,6 +12,8 @@ import Menu8 from 'assets/Menu8.svg';
 import Menu9 from 'assets/Menu9.svg';
 import ETH from 'assets/ETH.svg';
 import plus from 'assets/Plus.svg';
+import dark from 'assets/dark.svg';
+import light from 'assets/light.svg';
 import RightArrow from 'assets/RightArrow.svg';
 
 
@@ -108,7 +110,59 @@ const StyleBtn = styled.button`
 `;
 
 const StyleToggle = styled.div`
-    margin-left: 20px;
+    .input {
+    visibility: hidden;
+    }
+
+    .label {
+    position: absolute;
+    background: lightgray;
+    width: 45px;
+    height: 24px;
+    border-radius: 20px;
+    cursor: pointer;
+    }
+
+    .circle {
+    position: absolute;
+    background: rgb(0, 0, 0);
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    top: 3px;
+    left: 3px;
+    animation: toggleoff 0.4s linear forwards;
+    }
+
+    .input:checked + .label {
+    background-color: rgb(127, 127, 139);
+    }
+
+    .input:checked + .label .circle {
+    background-color: rgb(255, 255, 255);
+    animation: toggleon 0.4s linear forwards;
+    }
+
+    @keyframes toggleon {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(19px);
+    }
+    }
+
+    @keyframes toggleoff {
+    0% {
+        transform: translateX(19px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+    }
+    /* margin-left: 20px;
     margin-top: 2px;
     .checkbox {
         opacity: 0;
@@ -138,20 +192,48 @@ const StyleToggle = styled.div`
 }
     .checkbox:checked + .checkbox-label .ball {
         transform: translateX(23px);
-}
+} */
 
 `;
+// ----------------------Change background--------------------------
+const inputEl = document.querySelector(".input");
 
+const bodyEl = document.querySelector("body");
+
+inputEl.checked = JSON.parse(localStorage.getItem("mode"));
+
+updateBody();
+
+function updateBody() {
+  if (inputEl.checked) {
+    bodyEl.style.background = "black";
+  } else {
+    bodyEl.style.background = "lightgrey";
+  }
+}
+
+inputEl.addEventListener("input", () => {
+  updateBody();
+  updateLocalStorage();
+});
+
+function updateLocalStorage() {
+  localStorage.setItem("mode", JSON.stringify(inputEl.checked));
+}
+//------------------------------------------------------------------------
 
 const Toggle = () => {
     return (
         <StyleToggle>
-            <input type="checkbox" className="checkbox" id="checkbox"></input>
+            {/* <input type="checkbox" className="checkbox" id="checkbox"></input>
             <label for="checkbox" className="checkbox-label">
-                <i className="fas fa-moon"></i>
-                <i className="fas fa-sun"></i>
                 <span className="ball"></span>
-            </label>
+            </label> */}
+            <input type="checkbox" class="input" id="dark-mode" />
+            <label for="dark-mode" class="label"><div class="circle"></div></label>
+
+
+
         </StyleToggle>
     )
 }
@@ -228,7 +310,7 @@ const SideBar = () => {
                     <img src={Menu9}></img>
                     <a>Settings</a>
                     <Toggle></Toggle>
-                    
+
                 </div>
             </MenuStyled>
             <CardStyle>

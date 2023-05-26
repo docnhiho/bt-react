@@ -6,7 +6,7 @@ import SideBar from "components/Sidebar/SideBar";
 
 
 const LayoutStyled = styled.div`
-    background-color: rgba(202, 234, 230, 1);
+  background-color: rgba(202, 234, 230, 1);
   width: 1482px;
   margin: 0 auto;
 `;
@@ -20,7 +20,7 @@ const RightStyle = styled.div`
     }
 `;
 const ContentStyled = styled.div`
-  background-color: rgba(202, 234, 230, 1);
+  /* background-color: rgba(202, 234, 230, 1); */
   height: 100vh;
   padding-left: 10px;
 `;
