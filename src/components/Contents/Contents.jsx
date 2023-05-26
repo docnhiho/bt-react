@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import Banner from 'assets/banner.svg';
 import NFT from "components/NFT/NFT";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; 
+import nft1 from 'assets/nft1.svg';
+
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 
 
@@ -12,11 +14,12 @@ img{
 }
 .text{
   position: absolute;
-  top: 11%;
-  left: 19%;
+  top: -5%;
+  left: -24%;
   transform: translate(50%, 50%) ;
   width: 536px;
   height: 130px;
+  text-align: start;
 }
 p{
   font-family: 'DM Sans', sans-serif;
@@ -49,19 +52,40 @@ p{
   color: rgba(255, 255, 255, 1);
 
 }
+.carousel {
+  width: 716px;
+  height: 354px;
+}
 `;
 
 const Contents = () => {
   return (
     <ContentsStyle>
-      <img src={Banner} />
+      <Carousel fade className="carousel" showThumbs={false}>
+        <div>
+          <img src={Banner} />
+          <div className="text">
+            <p>Discover, Create and Sell Your Own NFT.</p>
+            <div className="btn">
+              <button className="but discover">Discover</button>
+              <button className="but create">Create</button>
+            </div>
+          </div>
+        </div>
+       
+        <div>
+          <img src={nft1} />
+        </div>
+
+      </Carousel>
+      {/* <img src={Banner} />
       <div className="text">
         <p>Discover, Create and Sell Your Own NFT.</p>
         <div className="btn">
           <button className="but discover">Discover</button>
           <button className="but create">Create</button>
         </div>
-      </div>
+      </div> */}
       <NFT></NFT>
     </ContentsStyle>
   )

@@ -4,6 +4,7 @@ import Facebook from "assets/Facebook.svg";
 import Github from "assets/Github.svg";
 import Google from "assets/Google.svg";
 import LoginImg from "assets/LoginImg.svg";
+import { LogoMyNFT } from "components/LogoMyNFT";
 
 
 
@@ -96,6 +97,7 @@ function Login() {
         <LoginStyle>
             <LoginForm>
                 <FormStyle>
+                    {/* <LogoMyNFT></LogoMyNFT> */}
                     <img src={Logo}></img>
                     <p className="Log">Log In</p>
                     <form className="formlogin">

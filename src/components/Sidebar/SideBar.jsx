@@ -149,13 +149,13 @@ const StyleToggle = styled.div`
     }
 
     100% {
-        transform: translateX(19px);
+        transform: translateX(18px);
     }
     }
 
     @keyframes toggleoff {
     0% {
-        transform: translateX(19px);
+        transform: translateX(18px);
     }
 
     100% {
@@ -196,30 +196,30 @@ const StyleToggle = styled.div`
 
 `;
 // ----------------------Change background--------------------------
-const inputEl = document.querySelector(".input");
+// const inputEl = document.querySelector(".input");
 
-const bodyEl = document.querySelector("body");
+// const bodyEl = document.querySelector("body");
 
-inputEl.checked = JSON.parse(localStorage.getItem("mode"));
+// inputEl.checked = JSON.parse(localStorage.getItem("mode"));
 
-updateBody();
+// updateBody();
 
-function updateBody() {
-  if (inputEl.checked) {
-    bodyEl.style.background = "black";
-  } else {
-    bodyEl.style.background = "lightgrey";
-  }
-}
+// function updateBody() {
+//   if (inputEl.checked) {
+//     bodyEl.style.background = "black";
+//   } else {
+//     bodyEl.style.background = "lightgrey";
+//   }
+// }
 
-inputEl.addEventListener("input", () => {
-  updateBody();
-  updateLocalStorage();
-});
+// inputEl.addEventListener("input", () => {
+//   updateBody();
+//   updateLocalStorage();
+// });
 
-function updateLocalStorage() {
-  localStorage.setItem("mode", JSON.stringify(inputEl.checked));
-}
+// function updateLocalStorage() {
+//   localStorage.setItem("mode", JSON.stringify(inputEl.checked));
+// }
 //------------------------------------------------------------------------
 
 const Toggle = () => {
